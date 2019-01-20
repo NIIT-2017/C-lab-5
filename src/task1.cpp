@@ -4,7 +4,6 @@
 #include <ctype.h> // isspace()
 #include <time.h>
 #include "task1.h"
-//#define ATT_NUM 100
 #define IN 1
 #define OUT 0
 
