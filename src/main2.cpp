@@ -22,13 +22,15 @@ int main()
 		fillMatrix(arr);  // filling the upper left quadrant of the matrix with '*' characters
 		setMatrix(arr);  // copying elements to other areas of the matrix
 		printMatrix(arr);
-
-		printf("\n\n\n\n");
+		//printf("\n\n\n\n");
+		
 
 		clock_t now;
 		now = clock();
 		while (clock() < (now + 3 * CLOCKS_PER_SEC))  // time delay for 3 sec.
 			;
+
+		clearScreen();
 	}
 
 	return 0;
