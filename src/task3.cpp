@@ -4,6 +4,8 @@
 #include <time.h>
 #include "task3.h"
 
+int count = 0;
+
 char *mixLine(char *instr, char * outstr)
 {
 	char in[256];

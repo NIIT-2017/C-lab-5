@@ -3,7 +3,6 @@
 #include <string.h>
 #include "task3.h"
 
-int count = 0;
 
 int main(void)
 {
