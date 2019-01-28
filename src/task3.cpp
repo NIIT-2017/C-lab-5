@@ -17,7 +17,7 @@ char *mixChars(char *in, char *out) //mixing letters in the word
 		out[i] = out[j];
 		out[j] = temp;
 	}
-
+	return out;
 }
 
 char *mixLine(char *instr, char * outstr) //mixing for a string
@@ -64,4 +64,5 @@ char *mixLine(char *instr, char * outstr) //mixing for a string
 			}
 		}
 	}
+	return outstr;
 }

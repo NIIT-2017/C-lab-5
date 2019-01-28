@@ -55,5 +55,5 @@ char * randomWords(char * in, char *out)
 
 	out[strlen(in)] = '\0';
 
-	return;
+	return out;
 }
