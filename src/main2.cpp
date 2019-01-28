@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include <windows.h>
+
 #include "task2.h"
 
 
@@ -15,9 +15,9 @@ int main()
 		clearMatrix(arr, M);
 		fillMatrix(arr, M);
 		setMatrix(arr, M);
-		system("cls");
+		//system("cls");
+		system( "clear" );
 		printMatrix(arr, M);
-		//Sleep(2000);
 		clock_t begin = clock();
 		int delay = 1000;
 		while (clock() < begin + delay);
