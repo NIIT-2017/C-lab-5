@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include <windows.h>
-#include <string.h>
-#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+
 #include "task2.h"
 
 
@@ -17,7 +17,9 @@ int main(void)
 		fillMatrix(arr);
 		setMatrix(arr);
 		printMatrix(arr);
-		Sleep(1000);
+		clock_t begin = clock();
+		int delay = 1000;
+		while (clock() < begin + delay);
 		system("cls");
 	}
 		
