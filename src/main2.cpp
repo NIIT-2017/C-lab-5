@@ -12,12 +12,12 @@ int main()
 	srand(time(0));
 	while (1)
 	{
-		clearMatrix(arr, M);
-		fillMatrix(arr, M);
-		setMatrix(arr, M);
+		clearMatrix(arr);
+		fillMatrix(arr);
+		setMatrix(arr);
 		//system("cls");
 		system( "clear" );
-		printMatrix(arr, M);
+		printMatrix(arr);
 		clock_t begin = clock();
 		int delay = 1000;
 		while (clock() < begin + delay);
