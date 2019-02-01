@@ -15,7 +15,9 @@ int main()
 		setMatrix(arr);
 		system("cls");
 		printMatrix(arr);
-		_sleep(1000);
+		clock_t begin = clock();
+		int delay = 1000;
+		while (clock() < begin + delay);
 	}
 	return 0;
 }
