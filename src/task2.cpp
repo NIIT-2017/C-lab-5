@@ -35,7 +35,7 @@ void setMatrix(char(*arr)[M])
 
 void printMatrix(char(*arr)[M])
 {
-	for (int i = 0; i < M - 4; i++)
+	for (int i = 0; i < M - 2; i++)
 	{
 		arr[i][M - 2] = '\0';
 		puts(arr[i]);

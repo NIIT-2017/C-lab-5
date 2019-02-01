@@ -1,6 +1,6 @@
 #include "task2.h"
 #include <stdio.h>
-#include <Windows.h>
+#include <time.h>
 
 
 int main()
@@ -12,7 +12,8 @@ int main()
 		fillMatrix(arr);
 		setMatrix(arr);
 		printMatrix(arr);
-		Sleep(1000);
+		unsigned int retTime = time(0) + 1;
+		while (time(0) < retTime);
 		puts(" ");
 	}
 }
