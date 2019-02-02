@@ -8,8 +8,11 @@ char *mixChars(char *in, char *out)
 {
 	int len = 0; // length of word
 	while (*(in + len) != ' ' && *(in + len) != '\n' && *(in + len) != '\0')
-		*(out + len++) = *(in + len);
-	
+	{
+		*(out + len) = *(in + len);
+		len++;
+	}
+
 	char temp = 0;
 	int randNum = 0;
 	for (int j = 1; j < len-1; j++)
