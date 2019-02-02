@@ -6,7 +6,6 @@
 
 char * randomWords(char * in, char *out)
 {
-	srand(time(NULL));
 	int j = 0, i = 0, k = 0, counter = 0, r = 0;
 	char arr[100][100];
 	while (in[j] != '\0')
@@ -28,7 +27,7 @@ char * randomWords(char * in, char *out)
 	k = counter;
 	while (counter != 0)
 	{
-		
+		srand(time(NULL));
 		i = rand() % k;
 		if (arr[i][0] != 0)
 		{
