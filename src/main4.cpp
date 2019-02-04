@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
-#include "C:\Users\sav19\source\repos\Lab5\Lab5\task1.h"
+#include "task1.h"
 
 #define N 10
 #define M 256
