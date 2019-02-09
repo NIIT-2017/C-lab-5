@@ -1,0 +1,9 @@
+Hello world
+I am the text file
+Here must be some text, but actually i don't know what to wright here
+They are damaging our city!
+Game over
+Exit
+OneWordString
+Mad max
+ThisIsTheMostLongestWordEverWhichWasWroteOnMyComputerHoHoHomerHo!
