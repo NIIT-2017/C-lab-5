@@ -2,9 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#define N 256
 #define inWord 1
 #define outWord 0
-#define N 256
+
 
 
 char * randomWords(char * in, char *out)

@@ -3,6 +3,7 @@
 #include <string.h>
 #include <time.h>
 #include "task3.h"
+#define N 256
 
 int main()
 {
