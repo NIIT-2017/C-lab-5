@@ -13,7 +13,7 @@ char *mixChars(char *in, char *out) // перемешивание символо
         {
             for(int i = 1; i < (strlen(in) - 2); i++)
             {
-                int j = rand()%(strlen(in) - 2);
+                int j = rand()%(strlen(in) - 2)+1;
                 if(j != i)
                 {
                     char temp = out[i];
