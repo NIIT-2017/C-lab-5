@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <Windows.h>
+#include <stdlib.h>
 #include "task2.h"
 #define N 30
 #define M 50
@@ -15,7 +15,8 @@ int main()
 		setMatrix(arr);
 		system("cls");
 		printMatrix(arr);
-		Sleep(1000);
+		unsigned int retTime = time(0) + 1;
+		while (time(0) < retTime);
 	}
 	return 0;
 }
