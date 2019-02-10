@@ -1,10 +1,13 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "task3.h"
 
 #define N 128
 
 int main()
 {
+    srand(time(0));
     FILE *fp;
     char instr[N] = {0}, outstr[N] = {0};
     fp = fopen("lab5.txt", "r");
