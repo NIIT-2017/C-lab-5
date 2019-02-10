@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "F:\Programming\C\Labs\lab5\lab5\task1\task1.h"
+#include "task1.h"
 #define N 256
 
 
