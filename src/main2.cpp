@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 #include "task2.h"
-#include <Windows.h>
 #define M 10
 int main()
 
@@ -13,7 +12,7 @@ int main()
 		fillMatrix(arr);
 		setMatrix(arr);
 		printMatrix(arr);
-		Sleep(1000);
+		
 	}
 	return 0;
 }

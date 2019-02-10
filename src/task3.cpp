@@ -4,6 +4,8 @@
 #include <time.h>
 char *mixChars(char *in, char *out)
 {
+	char in[256] = { 0 };
+	char out[256] = { 0 };
 	char temp;
 	strcpy(out, in);
 	for (int i = 1; i < strlen(out) - 1;i++)
