@@ -4,8 +4,7 @@
 #include <time.h>
 char *mixChars(char *in, char *out)
 {
-	char in[256] = { 0 };
-	char out[256] = { 0 };
+	
 	char temp;
 	strcpy(out, in);
 	for (int i = 1; i < strlen(out) - 1;i++)
@@ -21,11 +20,11 @@ char *mixLine(char *instr, char * outstr)
 {
 	int i = 0;
 	int j = 0;
-	char in[256];
-	char inst[256];
-	strcpy(in, instr);;
+	char in[256] = { 0 };
+	char inst[256] = { 0 };
+	strcpy(in, instr);
 	char out[256] = { 0 };
-	char *word[10];
+	char *word[10] = { 0 };
 	char del[10] = " \n";
 	
 	word[0] = strtok(in, del);
