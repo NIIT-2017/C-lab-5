@@ -6,8 +6,6 @@
 
 char *mixChars(char *in, char *out) // перемешивание символов в одном слове
 {
-    srand(time(0));
-
     for (int i = 0; isalpha(in[i]); i++)
     {
         out[i] = in[i];
@@ -42,7 +40,7 @@ char *mixLine(char *instr, char * outstr) // перемешивание для �
     {
         if (instr[i] !=' ' && state == 0)
         {
-            mixChars(in, out);                         // перемешиваем буквы
+            mixChars(&instr[i], &outstr[i]);                         // перемешиваем буквы
             state = 1;                                 // меняем статус на "внутри токена"
         }
         else if(instr[i] == ' ' && state == 1)
