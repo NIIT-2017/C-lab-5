@@ -54,6 +54,6 @@ char *mixLine(char *instr, char * outstr) /*перемешивание для целой строки*/
 		}
 		outstr[k] = ' ';
 	}
-	outstr[i++] = '\0';
+	outstr[--i] = '\0';
 return outstr;
 }
