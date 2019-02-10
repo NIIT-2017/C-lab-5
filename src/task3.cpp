@@ -17,7 +17,7 @@ char *mixChars(char *in, char *out) /*перемешивание символов в одном слове*/
 		out[2] = t;
 		return out;
 	}
-	if (size > 4)
+	if (size > 4 && strcmp(in, out) == 0)
 	{
 		for (int j = 1; j < (size - 1); j++)
 		{
