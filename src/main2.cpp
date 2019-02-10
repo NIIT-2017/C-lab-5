@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#unclude <time.h>
+#include <time.h>
 #include "task2.h"
 #define N 30
 #define M 50
