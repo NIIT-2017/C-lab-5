@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include "task3.h"
 #define N 256
 #define inWord 1
 #define outWord 0
