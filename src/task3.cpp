@@ -9,13 +9,26 @@ char *mixChars(char *in, char *out) //mixing letters in the word
 {
 	char temp;
 	sscanf(in, "%s", out);
-
-	for (int i = 1; i < (strlen(out) - 1); i++)//mixing the letters in the word
+	int len = strlen(out);
+	if (len <= 3)//don't touch the word with the length even or less than 3 letters
+		return out;
+	if (4 == len) {
+		temp = out[1];
+		out[1] = out[2];
+		out[2] = temp;
+		return out;
+	}
+	if (len > 4) 
 	{
-		int j = rand() % (strlen(out) - 2) + 1;//begin from 1 since we don't change first symbol
-		char temp = out[i];
-		out[i] = out[j];
-		out[j] = temp;
+		do {
+			for (int i = 1; i < (len - 1); i++)//mixing the letters in the word
+			{
+				int j = rand() % (len - 2) + 1;//begin from 1 since we don't change first symbol
+				char temp = out[i];
+				out[i] = out[j];
+				out[j] = temp;
+			}
+		} while (strcmp(in, out) == 0);
 	}
 	return out;
 }
@@ -28,7 +41,7 @@ char *mixLine(char *instr, char * outstr) //mixing for a string
 	int inWord = 0;
 
 
-	
+
 	for (int i = 0; i <= strlen(instr); i++)
 	{
 		outstr[i] = instr[i];
@@ -45,10 +58,10 @@ char *mixLine(char *instr, char * outstr) //mixing for a string
 			if (!inWord)//if we were not in the word previously
 			{
 				inWord = 1;//now we are in the word
-				
+
 				for (int j = i, k = 0; ((outstr[j] != ' ') && (j < strlen(outstr))); j++, k++)// forming array in
 				{
-					 in[k] = outstr[j];
+					in[k] = outstr[j];
 				}
 
 				mixChars(in, out);//mixing the order into the word
