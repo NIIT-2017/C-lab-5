@@ -4,6 +4,8 @@
 #include <string.h>
 #include "task3.h"
 
+#define N 20
+#define M 256
 
 // функция перемашивает символы внутри слова
 char *mixChars(char *in, char *out){
