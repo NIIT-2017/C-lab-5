@@ -1,0 +1,11 @@
+#ifndef TASK2_H
+#define TASK2_H
+#define N 24
+#define M 60
+
+void clearMatrix(char(*arr)[M]);	//заполнение двумерного массива(матрицы) пробелами
+void fillMatrix(char(*arr)[M]);		//заполнение верхнего левого квадранта матрицы звездочками
+void setMatrix(char(*arr)[M]);		//копирование элементов в другие области матрицы
+void printMatrix(char(*arr)[M]);	//печать матрицы
+
+#endif
