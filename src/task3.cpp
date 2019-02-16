@@ -59,6 +59,6 @@ char *mixLine(char *instr, char * outstr)
 		}
 		i++;
 	}
-	outstr[j] = '\0'; 
+	outstr[j-1] = '\0'; 
 	return outstr;
 }
