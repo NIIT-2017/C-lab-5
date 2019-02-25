@@ -13,7 +13,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include <Windows.h>
 
 int main()
 {
@@ -28,7 +27,6 @@ int main()
 		setMatrix(arr);
 		system("cls");
 		printMatrix(arr);
-		Sleep(500);
 	}
 	return 0;
 }
