@@ -23,7 +23,6 @@ int main()
 	{
 		clearMatrix(arr);
 		fillMatrix(arr);
-		Sleep(550);
 		setMatrix(arr);
 		system("cls");
 		printMatrix(arr);
