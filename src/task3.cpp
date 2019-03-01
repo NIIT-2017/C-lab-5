@@ -1,6 +1,7 @@
 #include <cstring>
 #include <stdlib.h>
 #include "task3.h"
+#include <cstdlib>
 #define M 10
 
 char *mixLine(char *instr, char * outstr)

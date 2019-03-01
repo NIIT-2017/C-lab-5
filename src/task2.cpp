@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <cstring>
 #include "task2.h"
+#include <cstdlib>
 
 
 

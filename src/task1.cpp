@@ -2,6 +2,7 @@
 #include <string.h>
 #include <cstring>
 #include <time.h> 
+#include <cstdlib>
 
 
 char * randomWords(char * in, char *out)
