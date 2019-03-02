@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
 #include <time.h>
 
 #define M 16					//Количество символов в строке
