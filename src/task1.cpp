@@ -20,9 +20,7 @@ char * randomWords(char * in, char * out) {
 
 	char spase[WORDS] = { '\0' };
 	srand(time(0));
-	do {
-		
-		for (int i = 0; i < word; i++) {										//Повторять, пока не используем все слова
+	for (int i = 0; i < word; i++) {											//Повторять, пока не используем все слова
 			do {
 				temp = rand() % word;											//Выбор случайного указателя на слово
 				if (index[temp] != NULL) {										//Проверка на использование данного слова
@@ -41,6 +39,5 @@ char * randomWords(char * in, char * out) {
 			} while (1);
 		}
 		out[strlen(out)] = '\0';												//Установка конца изменённой строки
-	} while (!strcmp(in, out));													//Сравнивать исходную и изменённую строки, пока они не отличаются
 	return out;
 }

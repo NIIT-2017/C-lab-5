@@ -5,7 +5,7 @@
 #include "task2.h"
 
 int main() {
-
+	int sleep = 1000;
 	char arr[N][M] = { '\0' };
 
 	do {
@@ -14,7 +14,8 @@ int main() {
 		setMatrix(arr);
 		system("cls");
 		printMatrix(arr);
-		Sleep(1000);
+		clock_t begin = clock();
+		while (clock() < begin + sleep);
 	} while (1);
 	return 0;
 }
