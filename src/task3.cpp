@@ -1,15 +1,15 @@
 #include <cstring>
 #include <stdlib.h>
 #include "task3.h"
-#include <cstdlib>
 #define M 10
 
-char *mixLine(char *instr, char * outstr)
+char *mixLine(char *instr, char *outstr)
 {
-	int size=0, i = 0, r=0, t=0;
+	int size=0, i = 0, t=0;
 	char in[M], out[M];
 	while(size < strlen(instr))
 	{
+		int r = 0;
 		while (instr[i] != ' ' & instr[i] != '\0')
 		{
 			in[r] = instr[i];
@@ -29,7 +29,9 @@ char *mixLine(char *instr, char * outstr)
 			t++;
 		}
 		outstr[t] = ' ';
+		t++;
 	}
+	outstr[t-1] = '\0';
 }
 
 
@@ -48,7 +50,7 @@ char *mixChars(char *in, char *out)
 			j++;
 		}
 		out[j] = in[j];
-		out[j++] = '\0';
+		out[j+1] = '\0';
 	}
 	else
 	{
@@ -57,6 +59,7 @@ char *mixChars(char *in, char *out)
 			out[j] = in[j];
 			j++;
 		}
+		out[j++] = '\0';
 	}
 	return 0;
 }
