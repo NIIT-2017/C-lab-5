@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
-#define WORDS 256
+#define WORDS 512
 
 char *mixChars(char *in, char *out);						//Перемешивание символов в одном слове
 char *mixLine(char *instr, char * outstr);					//Перемешивание для целой строки
