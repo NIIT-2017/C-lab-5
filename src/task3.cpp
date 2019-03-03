@@ -54,27 +54,46 @@ char *mixLine(char *instr, char * outstr) {
 	}
 
 	srand(time(0));
-	do {
-		for (int i = 0; i < word; i++) {										//Повторять, пока не используем все слова
-			do {
-				temp = rand() % word;											//Выбор случайного указателя на слово
-				if (index[temp] != NULL) {										//Проверка на использование данного слова
-					for (int j = 0; *index[temp]; j++) {						//Получение строки, начинающейся с этого слова
-						spase[j] = *index[temp]++;
-						if (*index[temp] == ' ' || *index[temp] == '\0') {		//Вырезание отдельного слова, на которое ссылается указатель
-							spase[j + 1] = '\0';
-							break;
-						}
-					}
-					mixChars(spase, rew_word);
-					strcat(outstr, rew_word);									//Добавление слова к изменённой строке
-					outstr[strlen(outstr)] = ' ';								//Добавление пробела после этого слова
-					index[temp] = NULL;											//Обнуление указателя на использованное слово
+	for (int i = 0; i < word; i++) {											//Повторять, пока не используем все слова
+		do {
+			for (int j = 0; *index[i]; j++) {									//Получение строки, начинающейся с этого слова
+				spase[j] = *index[i]++;
+				if (spase[j] == ' ' || spase[j] == '\0') {						//Вырезание отдельного слова, на которое ссылается указатель
+					spase[j] = '\0';
 					break;
 				}
-			} while (index[temp] == NULL);
-		}
-		outstr[strlen(instr)] = '\0';											//Установка конца изменённой строки
-	} while (!strcmp(instr, outstr));											//Сравнивать исходную и изменённую строки, пока они не отличаются
+			}
+			mixChars(spase, rew_word);
+			strcat(outstr, rew_word);										//Добавление слова к изменённой строке
+			outstr[strlen(outstr)] = ' ';									//Добавление пробела после этого слова
+			index[temp] = NULL;												//Обнуление указателя на использованное слово
+			break;
+		} while (index[temp] == NULL);
+	}
+	outstr[strlen(instr)] = '\0';												//Установка конца изменённой строки
 	return outstr;
 }
+
+
+
+
+//for (int i = 0; i < word; i++) {										//Повторять, пока не используем все слова
+//	do {
+//		temp = rand() % word;											//Выбор случайного указателя на слово
+//		if (index[temp] != NULL) {										//Проверка на использование данного слова
+//			for (int j = 0; *index[temp]; j++) {						//Получение строки, начинающейся с этого слова
+//				spase[j] = *index[temp]++;
+//				if (*index[temp] == ' ' || *index[temp] == '\0') {		//Вырезание отдельного слова, на которое ссылается указатель
+//					spase[j + 1] = '\0';
+//					break;
+//				}
+//			}
+//			mixChars(spase, rew_word);
+//			strcat(outstr, rew_word);									//Добавление слова к изменённой строке
+//			outstr[strlen(outstr)] = ' ';								//Добавление пробела после этого слова
+//			index[temp] = NULL;											//Обнуление указателя на использованное слово
+//			break;
+//		}
+//	} while (index[temp] == NULL);
+//}
+//outstr[strlen(instr)] = '\0';											//Установка конца изменённой строки

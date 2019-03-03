@@ -10,7 +10,8 @@ int main() {
 	
 	puts("We use File: \"Lb5_sort3.txt\"");
 	fp = fopen("Lb5_sort3.txt", "r");											//Открытие тестового файла в корневом каталоге
-	fp == NULL ? puts("Opening is failed") : puts("Opening is successful");		//Проверка корректности открытия файла
+	if (fp == NULL)
+		puts("Opening is failed");												//Проверка корректности открытия файла
 
 	while (fgets(str, WORDS, fp) != NULL) {
 		puts(mixLine(str, buf));												//Мешаем слова в строке и выводим на экран
