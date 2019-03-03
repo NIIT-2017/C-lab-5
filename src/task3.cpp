@@ -74,7 +74,7 @@ char *mixLine(char *instr, char * outstr) {
 				}
 			} while (index[temp] == NULL);
 		}
-		outstr[strlen(outstr)] = '\0';											//Установка конца изменённой строки
+		outstr[strlen(instr)] = '\0';											//Установка конца изменённой строки
 	} while (!strcmp(instr, outstr));											//Сравнивать исходную и изменённую строки, пока они не отличаются
 	return outstr;
 }
