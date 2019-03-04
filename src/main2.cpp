@@ -2,22 +2,22 @@
 #include <stdlib.h>
 #include <time.h>
 #include "task2.h"
-#define N 30
-#define M 30
+
 
 int main()
 {
-	char arr[N][M] = { 0 };
-
-	while (1)
+	char arr[N][M];
+	srand((unsigned int)time(0));
+	clock_t t = clock();
+	while (clock() < t + 10000)
 	{
 		clearMatrix(arr);
 		fillMatrix(arr);
+		system("cls");
 		setMatrix(arr);
-		system("CLS");
 		printMatrix(arr);
-		unsigned int retTime = time(0) + 1;
-		while (time(0) < retTime);
+		clock_t t = clock();
+		while (clock() < t + CLOCKS_PER_SEC);
 	}
 	return 0;
 }

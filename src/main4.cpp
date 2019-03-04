@@ -1,46 +1,38 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <time.h>
 #include "task1.h"
-#define N 256
 
+int main() {
 
-int main()
-{
-	char in[N] = { 0 };
-	char out[N] = { 0 };
+	char in[30][256] = { '\0' };
+	char out[256] = { '\0' };
 
-	srand(time(0));
+	FILE * fp = NULL;
+	fp = fopen("text.txt", "r+");
 
-	FILE *fp;
-	FILE *fr;
-	fp = fopen("Random_wordsr.txt", "r");
-	fr = fopen("Random_wordsw.txt", "w");
-
-	if (fp == NULL)
-	{
-		puts("File not found!");
+	if (fp == NULL) {
+		printf("Your file can not be find\n");
 		return 1;
 	}
 
-	if (fr == NULL)
-	{
-		puts("File not found!");
+	FILE * fpW = NULL;
+	fpW = fopen("myfile.txt", "w");
+
+	if (fpW == NULL) {
+		printf("Your file can not be find\n");
 		return 1;
 	}
 
-	while (fgets(in, N, fp) != NULL)
-	{
-		if (in[strlen(in) - 1] == '\n')
-			in[strlen(in) - 1] = '\0';
-
-		randomWords(in, out);
-		printf("%s\n", out);
-		fprintf(fr, "%s\n", out);
+	int strNumber = 0;
+	while (!feof(fp)) {
+		fgets(in[strNumber], 256, fp);
+		randomWords(in[strNumber], out);
+		fprintf(fpW, "%s\n", out);
+		for (int i = 0; i < strlen(out); i++)
+			out[i] = '\0';
+		strNumber++;
 	}
-
 	fclose(fp);
-	fclose(fr);
+	fclose(fpW);
 	return 0;
 }

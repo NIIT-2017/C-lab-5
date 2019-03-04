@@ -1,44 +1,50 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#define N 40
-#define M 30
-#define ST '*'
+#include "task2.h"
+
+#define A 6
 
 void clearMatrix(char(*arr)[M])
 {
-	for (int i = 0; i < N; i++)
-		for (int j = 0; j < M; j++)
+	int i, j;
+	for (i = 0; i < N; i++)
+	{
+		for (j = 0; j < M; j++)
 			arr[i][j] = ' ';
+	}
 }
+
 void fillMatrix(char(*arr)[M])
 {
-	srand(time(NULL));
-	for (int i = 0; i < N / 2; i++)
-		for (int j = 0; j < M / 2; j++)
+	int i, j, rnd = 0;
+	for (i = 0; i < (N / 2); i++)
+	{
+		for (j = 0; j < (M / 2); j++)
 		{
-			if (rand() % 2 == 1)
-				arr[i][j] = ST;
+			rnd = rand() % A;
+			if (rnd == 0)
+				arr[i][j] = '*';
 		}
+	}
 }
+
 void setMatrix(char(*arr)[M])
 {
-	for (int i = 0; i < N / 2; i++)
-		for (int j = 0; j < M / 2; j++)
+	int i, j;
+	for (i = 0; i < (N / 2); i++)
+		for (j = 0; j < (M / 2); j++)
 		{
-			if (arr[i][j] == ST)
-			{
-				arr[i][M - 1 - j] = ST;
-				arr[N - 1 - i][M - 1 - j] = ST;
-				arr[N - 1 - i][j] = ST;
-			}
+			if (arr[i][j] == '*')
+				arr[i][(M - 1) - j] = arr[(N - 1) - i][j] = arr[(N - 1) - i][(M - 1) - j] = arr[i][j];
 		}
 }
+
 void printMatrix(char(*arr)[M])
 {
-	for (int i = 0; i < N; i++)
+	int i, j;
+	for (i = 0; i < N; i++)
 	{
-		for (int j = 0; j < M; j++)
+		for (j = 0; j < M; j++)
 			putchar(arr[i][j]);
 		putchar('\n');
 	}

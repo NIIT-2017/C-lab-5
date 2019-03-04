@@ -1,26 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
+#include <string.h>
 #include "task3.h"
 
-#define N 128
+#define N 20
+#define M 256
 
-int main()
-{
-	srand(time(0));
-	FILE *fp;
-	char instr[N] = { 0 }, outstr[N] = { 0 };
-	fp = fopen("l5z3.txt", "r");
+int main() {
 
-	if (fp == NULL)
-	{
-		puts("File not found!");
+	char arr[N][M] = { '\0' };
+	char outstr[M] = { '\0' };
+
+	FILE * fp = NULL;
+	fp = fopen("text.txt", "r+");
+
+	if (fp == NULL) {
+		printf("Your file can not be find\n");
 		return 1;
 	}
 
-	while (fgets(instr, N, fp) != NULL)
-		puts(mixLine(instr, outstr));
+	FILE * fpW = NULL;
+	fpW = fopen("myfile.txt", "w");
+
+	if (fpW == NULL) {
+		printf("Your file can not be find\n");
+		return 1;
+	}
+
+	int strNumber = 0;
+	while (!feof(fp)) {
+		fgets(arr[strNumber], M, fp);
+		mixLine(arr[strNumber], outstr);
+		fprintf(fpW, "%s\n", outstr);
+		strNumber++;
+	}
 
 	fclose(fp);
+	fclose(fpW);
+
 	return 0;
 }
