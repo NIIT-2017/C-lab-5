@@ -1,6 +1,6 @@
 ﻿//#include "pch.h"
 #include <stdio.h>
-#include "/Users/Phantom/Documents/Visual Studio 2017/Labs/C/Lab5/task1/task1/task1/task1.h"
+#include "task1.h"
 
 #define N 128
 
