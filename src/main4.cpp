@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#include "C:\Users\agubin\source\repos\C-lab-5\Task1\task1.h"
+#include "task1.h"
 #include <stdio.h>
 #include <string.h>
 
