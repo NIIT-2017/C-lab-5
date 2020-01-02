@@ -2,6 +2,7 @@
 #include <time.h> 
 #include <stdlib.h>
 #include <stdio.h>
+#define size 256
 
 char* randomWords(char* in, char* out)
 {

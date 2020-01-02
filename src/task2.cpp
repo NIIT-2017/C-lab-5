@@ -2,6 +2,8 @@
 #include <time.h> 
 #include <stdlib.h>
 #include <stdio.h>
+#define N 12 
+#define M 12 
 
 void clearMatrix(char(*arr)[M])
 {

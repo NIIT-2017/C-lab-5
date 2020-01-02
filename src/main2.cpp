@@ -1,6 +1,8 @@
 #include "task2.h"
 #include <stdlib.h>
 #include <time.h> 
+#define N 12 
+#define M 12 
 
 int main()
 {
