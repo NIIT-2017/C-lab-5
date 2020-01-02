@@ -2,6 +2,7 @@
 #include <time.h> 
 #include <stdlib.h>
 #include "task3.h"
+#define size 256
 
 int letter(char a)
 {
