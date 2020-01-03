@@ -9,7 +9,7 @@ int main()
     char in[size] = { 0 };
     char out[size] = { 0 };
     FILE* fp;
-    fp = fopen("wisdom.txt", "rt");
+    fp = fopen("file.txt", "rt");
     if (!fp)
     {
         puts("Error!");
