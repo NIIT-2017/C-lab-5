@@ -35,7 +35,7 @@ char* mixChars(char* in, char* out)
                 out[i] = out[k];
                 out[k] = tmp;
         }
-        int flag = 0; // check if outword equals inword
+  /*      int flag = 0; // check if outword equals inword
         i = 0;
         while (letter(in[i]) == 1)
         {
@@ -51,7 +51,7 @@ char* mixChars(char* in, char* out)
         {
             i = 0;
             mixChars(in, out); // if outword equals inword repeat again
-        }
+        }*/
     }
     return out;
 }
