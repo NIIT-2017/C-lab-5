@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
+#include <time.h>
 
 #define SIZE 10
 
@@ -30,7 +30,8 @@ void printMatrix(char(*m)[SIZE])
         for (int j = 0; j < SIZE; j++)
             printf("%c ", m[i][j]);
         printf("\n");
-        Sleep(250);
+        clock_t begin = clock();
+        while (clock() < begin + CLOCKS_PER_SEC / 4);
     }
 }
 
