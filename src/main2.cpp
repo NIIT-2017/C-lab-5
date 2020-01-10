@@ -13,6 +13,7 @@ int main()
 
     while (1)
     {
+        system("cls");
         clearMatrix(matr);
         fillMatrix(matr);
         setMatrix(matr);
