@@ -1,6 +1,5 @@
 ﻿#include <stdlib.h>
 #include <stdio.h>
-#include <windows.h>
 #include "task2.h"
 
 void clearMatrix(char(*arr)[M])
