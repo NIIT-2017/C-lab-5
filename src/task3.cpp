@@ -31,7 +31,7 @@ void getWordFromInStr(char* p, char* in)
 
 }
 
-int getArrPointers(char* pin[], char in[])
+int getArrPointer(char* pin[], char in[])
 {
 	int i = 0, inWord = 0;
 	int cp = 0;
@@ -90,7 +90,7 @@ char* mixLine(char* instr, char* outstr)
 
 	char* pin[MAX_ROW_SIZE];
 	int cp = 0; 
-	cp = getArrPointers(pin, instr); 
+	cp = getArrPointer(pin, instr);
 
 	int i,j, cs=0;
 
