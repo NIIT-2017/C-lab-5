@@ -6,6 +6,9 @@ char* randomWords(char* in, char* out) {
 	int i = 0, inWord = 0, n = 0;
 	char* pWord[LEN_NUM] = { NULL };
 
+	if (*in != 0 && in[strlen(in) - 1] == '\n')
+		in[strlen(in) - 1] = '\0';
+
 	while (in[i]) {
 		if (in[i] != ' ' && inWord == 0) {	//начало слова
 			inWord = 1;
@@ -15,7 +18,6 @@ char* randomWords(char* in, char* out) {
 			printf("pWord[%d] = %p\n", n, pWord[n]);
 			printf("pWord[%d] = %s\n", n, pWord[n]);
 			n++;
-
 		}
 		else if (in[i] == ' ' && inWord == 1) {	//конец слова
 			inWord = 0;
@@ -24,7 +26,7 @@ char* randomWords(char* in, char* out) {
 	}
 
 	printf("n --> %d\n", n);
-	putchar('\n');
+	//putchar('\n'); 
 
 	srand(time(NULL));
 

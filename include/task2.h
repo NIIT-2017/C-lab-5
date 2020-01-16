@@ -1,7 +1,9 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#include <clocale>
+#include <time.h>
+
+#define M 20
+#define N 30
 
 void clearMatrix(char(*arr)[M]);
 void fillMatrix(char(*arr)[M]);
