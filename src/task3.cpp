@@ -24,6 +24,7 @@ char* mixChars(char* in, char* out) {
 	}
 
 	srand(time(NULL));
+	
 	printf("wordLen --> %d\n", wordLen);
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	for (int i = 1; i < wordLen - 1; i++) {
