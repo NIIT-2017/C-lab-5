@@ -23,7 +23,7 @@ char* mixChars(char* in, char* out) {
 		i++;
 	}
 
-	srand(time(NULL));
+	//srand(time(NULL));
 	
 	printf("wordLen --> %d\n", wordLen);
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
@@ -78,7 +78,7 @@ char* mixLine(char* instr, char* outstr) {
 	printf("Количество слов n --> %d\n", n);
 	printf("########################################\n");
 
-	srand(time(NULL));
+	//srand(time(NULL));
 
 	for (int i = 0; i < n; i++) {
 		int j = rand() % (n - i);

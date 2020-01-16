@@ -15,6 +15,7 @@ int main() {
 	}
 
 	while (fgets(instr, LEN_MAX, fp)) {
+		srand(time(NULL));
 		//printf("instr = %s\n", instr);
 		mixLine(instr, outstr);
 		printf("%s\n", outstr);
