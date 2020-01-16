@@ -27,13 +27,17 @@ char* mixChars(char* in, char* out) {
 	
 	printf("wordLen --> %d\n", wordLen);
 	printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-	for (int i = 1; i < wordLen - 1; i++) {
-		randNum =  rand() % (wordLen - i - 1);
+	for (int i = 1; i < wordLen - 2; i++) {
+		//randNum =  rand() % (wordLen - i - 1);
+		randNum = 1 + rand() % (wordLen - 2);
+		while (randNum == i) {
+			randNum = 1 + rand() % (wordLen - 2);
+		}
 		printf("randNum = %d\n", randNum);
 		printf("out[%d] --> %c\n", randNum, out[randNum]);
-		char temp = out[randNum];
-		out[randNum] = out[i];
-		out[i] = temp;
+		char temp = out[i];
+		out[i] = out[randNum];
+		out[randNum] = temp;
 		printf("out[%d] --> %c\n", i, out[i]);
 	}
 	printf("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n");
