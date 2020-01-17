@@ -1,124 +1,54 @@
 #include "task3.h"
 
-//#define printf //
+#define size 256
 
-char* mixChars(char* in, char* out) {
-	printf("****************************************************\n");
-	printf("in ==> %s\n", in);
-	int randNum = 0;
-	int wordLen = 0;
-	int i = 0;
-
-	i = 0;
-	while (in[i]) {
-		if (in[i] != ' ' && in[i] != '\n' && in[i] != '\0') {
-			//printf("in[%d] --> %c\n", i, in[i]);
-			out[i] = in[i];
-			printf("out[%d] --> %c\n", i, out[i]);
-			wordLen++;
-		}
-		else {
-			break;
-		}
-		i++;
-	}
-
-	//srand(time(NULL));
-	
-	printf("wordLen --> %d\n", wordLen);
-	//printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-	
-	srand(time(NULL));
-	//if (wordLen > 3) {
-		for (int i = 1; i < wordLen - 2; i++) {
-			randNum = 1 + rand() % (wordLen - i);
-			while (randNum == i) {
-				randNum = 1 + rand() % (wordLen - i);
-			}
-			printf("randNum = %d\n", randNum);
-			printf("out[%d] --> %c\n", randNum, out[randNum]);
-			char temp = out[i];
-			out[i] = out[randNum];
-			out[randNum] = temp;
-			printf("out[%d] --> %c\n", i, out[i]);
-		}
-	//}
-	
-	printf("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n");
-	printf("out ===> %s\n", out);
-
-	return out;
+int letter(char a) {
+    if (a == ' ' || a == '\n' || a == '\0')
+        return 0;
+    else
+        return 1;
 }
 
-//**************************************************************************
+char* mixChars(char* in, char* out) {
+    int i = 0, count = 0;
+    while (letter(in[i]) == 1) {
+        out[i] = in[i];
+        count++;
+        i++;
+    }
+    srand(time(NULL));
+    if (count > 3) {
+        for (i = 1; i <= count - 2; i++) {
+            int k = 1 + rand() % (count - 2) - 1 + 1;
+            while (k == i) {
+                k = 1 + rand() % (count - 2) - 1 + 1;
+            }
+            char tmp = out[i];
+            out[i] = out[k];
+            out[k] = tmp;
+        }
+    }
+    return out;
+}
 
 char* mixLine(char* instr, char* outstr) {
+    int InWord = 0;
+    int i = 0, count = 0;
+    while (instr[i]) {
+        if (letter(instr[i]) == 1 && InWord == 0) {
+            mixChars(&instr[i], &outstr[i]);
+            InWord = 1;
 
-	int i = 0, inWord = 0, n = 0;
-	char* pWord[NLINES_MAX] = { NULL };
-	char tmpstr[LEN_MAX] = { 0 };
-
-	//printf("mixLine instr = %s\n", instr);
-// Определение начальных адресов(указателей) каждого слова в каждой строке
-	while (instr[i]) {
-		if (instr[i] != ' ' && instr[i] != '\n' && instr[i] != '\0' && inWord == 0) {	//начало слова
-			inWord = 1;
-			//printf("&instr[%d] = %s\n", i, &instr[i]);
-			mixChars(&instr[i], &tmpstr[i]);
-			pWord[n] = &tmpstr[i];
-			//printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-			//printf("&tmpstr[%d] = %p\n", i, &tmpstr[i]);
-			//printf("&tmpstr[%d] = %s\n", i, &tmpstr[i]);
-			//printf("pWord[%d] --> %p\n", n, pWord[n]);
-			//printf("pWord[%d] --> %s\n", n, pWord[n]);
-			n++;
-		}
-		else if (instr[i] == ' ' && inWord == 1) {	//конец слова
-			inWord = 0;
-		}
-		else if ((instr[i] == '\n' || instr[i] == '\0')) {	//конец строки
-			inWord = 0;
-		}
-		i++;
-	}
-
-	//printf("After mixChars tmpstr ===> %s\n", tmpstr);
-	//printf("Количество слов n --> %d\n", n);
-	//printf("########################################\n");
-
-	//srand(time(NULL));
-
-	for (int i = 0; i < n; i++) {
-		int j = rand() % (n - i);
-		//printf("****************************************\n");
-		//printf("pWord[rand = %d] --> %s\n", j, pWord[j]);
-		//printf("pWord[%d] --> %p\n", i, pWord[i]);
-		//printf("pWord[%d] --> %s\n", i, pWord[i]);
-		char* tmp = pWord[j];
-		pWord[j] = pWord[i];
-		pWord[i] = tmp;
-		//printf("pWord[%d] --> %p\n", i, pWord[i]);
-		//printf("pWord[%d] --> %s\n", i, pWord[i]);
-		//printf("****************************************\n");
-	}
-	
-	int j = 0;
-	for (int i = 0; i < n; i++) {
-		char* nWord = pWord[i];
-		//printf("pWord[%d] = %p\n", i, pWord[i]);
-		//printf("pWord[%d] = %s\n", i, pWord[i]);
-		//printf("nWord = %p\n", nWord);
-		//printf("nWord = %s\n", nWord);
-		
-		while (nWord && (*nWord != ' ' && *nWord != '\0')) {
-			outstr[j] = *nWord++;
-			j++;
-		}
-		outstr[j++] = ' ';
-		printf("outstr --> %s\n", outstr);
-	}
-	outstr[j] = '\0';
-	printf("outstr = %s\n", outstr);
-
-	return outstr;
+            i++;
+        }
+        else if (letter(instr[i]) == 1 && InWord == 1) {
+            i++;
+        }
+        else if (letter(instr[i]) == 0 && InWord == 1) {
+            outstr[i] = instr[i];
+            InWord = 0;
+            i++;
+        }
+    }
+    return outstr;
 }
