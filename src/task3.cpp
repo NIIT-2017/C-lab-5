@@ -34,7 +34,6 @@ char *mixChars(char *in, char *out) {
         out++;
         originalIn++;
     }
-    out--;
     *out = '\0';
     return originalOut;
 }
@@ -67,8 +66,11 @@ char *mixLine(char *instr, char *outstr) {
            outstr++;                                //Copying a word in string symbol by symbol
            pWord++;
        }
-       *outstr = ' ';                              //When the word finishes, and it`s a space moving to next pointer
+       *outstr = ' ';                              //When the word finishes to put down a space and move to next pointer
        outstr++;
    }
+    outstr--;
+    *outstr = '\0';
+
     return firstElement;
 }
