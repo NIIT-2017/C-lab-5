@@ -34,6 +34,7 @@ char *mixChars(char *in, char *out) {
         out++;
         originalIn++;
     }
+    out--;
     *out = '\0';
     return originalOut;
 }
