@@ -12,4 +12,5 @@ int main()
         randomWords(lines[i],buf);
         printf("%s\n",buf);
     }
+    return 0;
 }

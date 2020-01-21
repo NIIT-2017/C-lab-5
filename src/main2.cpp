@@ -1,4 +1,5 @@
 #include "task2.h"
+#include <time.h>
 int main()
 {
     srand(time(NULL));
@@ -10,7 +11,8 @@ int main()
         setMatrix(arr);
         system("cls");
         printMatrix(arr);
-        _sleep(50);
+        time_t  now = clock();
+        while (now - clock() > CLOCKS_PER_SEC);
     }
     return 0;
 }
