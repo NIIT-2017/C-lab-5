@@ -7,34 +7,36 @@ char *arr[128];
 
 char *mixChars(char *in, char *out) {
     char swap;
-    char *endOfWord = in;
+    char *endOfWord = out;
+    char *firstSymbol = out;
     char *originalIn = in;
     char *originalOut = out;
-    while (*endOfWord != ' ' && *endOfWord != '\0') {  //You looking for last symbol of words
-        endOfWord++;
-    }
-    endOfWord--;                                  // Going back to last symbol
 
-    in++;                                        // Ignoring first and last symbols
+    while (*in != ' ' && *in != '\0') {                          //Copying original word to out
+        *out = *in;
+        out++;
+        in++;
+    }
+    *out = '\0';
+
+    endOfWord = --out;
+
+    firstSymbol++;                                        // Ignoring first and last symbols
     endOfWord--;
 
         time_t now;
         time(&now);
         srand(now);
         int randomNumber = 0;
-        while (in < endOfWord) {                                //While beginning and end to meet each over
-            randomNumber = rand() % (endOfWord - in + 1);          //You get a random element number of symbol in word
+
+        while (firstSymbol < endOfWord) {                                //While beginning and end to meet each over
+            randomNumber = rand() % (endOfWord - firstSymbol + 1);          //You get a random element number of symbol in word
             swap = *endOfWord;                                 //You change places of words in the string
-            *endOfWord = *(in + randomNumber);
-            *(in + randomNumber) = swap;
+            *endOfWord = *(firstSymbol + randomNumber);
+            *(firstSymbol + randomNumber) = swap;
             endOfWord--;
         }
-    while (*originalIn) {                          //Copying mixed word to out
-        *out = *originalIn;
-        out++;
-        originalIn++;
-    }
-    *out = '\0';
+
     return originalOut;
 }
 
@@ -46,7 +48,7 @@ char *mixLine(char *instr, char *outstr) {
     int inWord = 0;
     char *firstElement = outstr;
     char changedWord[256];
-    while (*instr) {
+     while (*instr) {
         if (*instr != ' ' && inWord == 0) {     //Reading a string up to the end and looking for words in string
             count++;
             arr[i] = instr;                    //Writing down an adress of first symbol of word in array of pointers
