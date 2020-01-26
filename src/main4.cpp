@@ -1,8 +1,8 @@
-#include "C:\learning_ci\lab5\lab5task1\lab5task1\task1.cpp"
+//#include "C:\learning_ci\lab5\lab5task1\lab5task1\task1.cpp"
 #include <stdio.h>
 #include <string.h>
-//#include "task1.h"
-//#include "task1.cpp"
+#include "task1.h"
+#include "task1.cpp"
 
 #define LINES 256
 #define SYMBOLS_IN_LINE 256
