@@ -2,7 +2,8 @@
 #define M 40
 #define PRINTING_SYMBOL '*'
 #define SYMBOL_OF_VOID ' '
-#define SPEED 10
+#define SPEED_OF_PRESENTATION 10
+#define TIME_OF_PRESENTATION 1000
 
 #include <stdio.h>
 #include <stdlib.h>
