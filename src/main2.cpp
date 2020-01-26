@@ -8,7 +8,7 @@ int main()
     time_t now;
     time(&now);
     srand(now);
-    for (int count = 0; count < 1000; count++)
+    for (int count = 0; count < TIME_OF_PRESENTATION; count++)
     {
         clearMatrix(matrix);
         fillMatrix(matrix);
@@ -16,7 +16,7 @@ int main()
         system("cls");
         printMatrix(matrix);
         clock_t begin = clock();
-        while (clock() < begin + CLOCKS_PER_SEC / SPEED);
+        while (clock() < begin + CLOCKS_PER_SEC / SPEED_OF_PRESENTATION);
     }
     return 0;
 }
