@@ -1,9 +1,7 @@
-#include "task3.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-
 #define SIZE 256
 
 char* mixLine(char* instr, char* outstr)
@@ -11,21 +9,23 @@ char* mixLine(char* instr, char* outstr)
 	outstr[0] = '\0';
 	char wordIn[SIZE];
 	char wordOut[SIZE];
+
 	if (instr[strlen(instr) - 1] == '\n')
 		instr[strlen(instr) - 1] = '\0';
-	for (int ch = 0; ch < strlen(instr); ch++)
+	for (int c = 0; c < strlen(instr); c++)
 	{
-		int L = 0;
-		for (int i = ch; instr[i] != ' ' && instr[i] != '\0'; i++)
+		int letterCounter = 0;
+
+		for (int i = c; instr[i] != ' ' && instr[i] != '\0'; i++)
 		{
 			if (instr[i] != ' ')
 			{
-				wordIn[L] = instr[i];
-				L++;
+				wordIn[letterCounter] = instr[i];
+				letterCounter++;
 			}
 			if (instr[i + 1] == ' ' || instr[i + 1] == '\0')
 			{
-				wordIn[L] = '\0';
+				wordIn[letterCounter] = '\0';
 				mixChars(wordIn, wordOut);
 				int length = strlen(outstr);
 				for (int outC = 0; outC <= strlen(wordOut); outC++)
@@ -38,7 +38,7 @@ char* mixLine(char* instr, char* outstr)
 					}
 				}
 			}
-			ch++;
+			c++;
 		}
 	}
 	if (outstr[strlen(outstr) - 1] == ' ')
@@ -63,3 +63,4 @@ char* mixChars(char* in, char* out)
 	}
 	return out;
 }
+
