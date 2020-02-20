@@ -1,3 +1,4 @@
+#include "task3.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,7 +10,6 @@ char* mixLine(char* instr, char* outstr)
 	outstr[0] = '\0';
 	char wordIn[SIZE];
 	char wordOut[SIZE];
-
 	if (instr[strlen(instr) - 1] == '\n')
 		instr[strlen(instr) - 1] = '\0';
 	for (int c = 0; c < strlen(instr); c++)
