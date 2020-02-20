@@ -21,6 +21,7 @@ char* mixChars(char* in, char* out)
 	if (word > 3) /* סכמגמ במכüרו 3ץ סטלגמכמג*/
 	{
 		i = 1;
+
 		while( i < (word-1))
 		{
 			int k = rand() % (word-i-1) + 1;
@@ -28,6 +29,7 @@ char* mixChars(char* in, char* out)
 			{
 				char tmp = out[word - i];
 				out[word - i] = out[k];
+
 				out[k] = tmp;
 			}
 			i++;
@@ -35,6 +37,7 @@ char* mixChars(char* in, char* out)
 	}
 
 	return in + word;
+
 }
 
 char* mixLine(char* instr, char* outstr)
@@ -42,6 +45,7 @@ char* mixLine(char* instr, char* outstr)
 	
     int i = 0, inWord = 0;
     outstr[i] = '\0';
+
 	if (instr[strlen(instr) - 1] == '\n')
 		instr[strlen(instr) - 1] = '\0';
 
@@ -60,6 +64,5 @@ char* mixLine(char* instr, char* outstr)
 		i++;
 	}
 
-	
 	return outstr;
 }
