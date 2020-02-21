@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "task1.h"
 #include <stdio.h>
+#include <string.h>
 
 #define SIZE 256
 
