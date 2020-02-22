@@ -53,21 +53,26 @@ char* mixLine(char* instr, char* outstr)
 	return outstr;
 }
 
-
 char* mixChars(char* in, char* out)
 {
+
 	for (int k = 0; k <= strlen(in); k++)
 	{
 		out[k] = in[k];
 	}
-
-	for (int j = 1; j < (strlen(out) - 1); j++)
+	
+	int position1 = rand() % (strlen(out) - 1) + 1;
+	int position2 = rand() % (strlen(out) - 1) + 1;
+	while (position1 == position2)
 	{
-		int position = rand() % (strlen(out) - 1 - j) + j;
-		char buf = out[j];
-		out[j] = out[position];
-		out[position] = buf;
+		position1 = rand() % (strlen(out) - 1) + 1;
 	}
+		char buf = out[position1];
+		out[position1] = out[position2];
+		out[position2] = buf;
 
 	return out;
 }
+
+
+
