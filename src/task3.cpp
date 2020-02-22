@@ -61,15 +61,18 @@ char* mixChars(char* in, char* out)
 		out[k] = in[k];
 	}
 	
-	int position1 = rand() % (strlen(out) - 1) + 1;
-	int position2 = rand() % (strlen(out) - 1) + 1;
-	while (position1 == position2)
+	if (strlen(out) > 3)
 	{
-		position1 = rand() % (strlen(out) - 1) + 1;
-	}
+		int position1 = rand() % (strlen(out) - 2) + 1; //вынести в функцию
+		int position2 = rand() % (strlen(out) - 2) + 1;
+		while (position1 == position2)
+		{
+			position1 = rand() % (strlen(out) - 1) + 1;
+		}
 		char buf = out[position1];
 		out[position1] = out[position2];
 		out[position2] = buf;
+	}
 
 	return out;
 }
