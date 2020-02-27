@@ -11,7 +11,7 @@ char* randomWords(char* in, char* out)
 
 	for (; i < 256 && in[i]; i++) 
 	{
-		if (in[i] == ' ')
+		if (in[i] == ' ')//ìåæäó ñëîâ
 			inWord = 0;
 		else if (in[i] != ' ' && inWord == 0)
 		{

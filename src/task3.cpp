@@ -28,7 +28,7 @@ char* mixChars(char* in, char* out)
 
 char* mixLine(char* instr, char* outstr)
 {
-	int inWord = 0,
+	int inWord = 0, 
 		count = 0, 
 		u = 0;
 	char buf[64], bufout[64];
