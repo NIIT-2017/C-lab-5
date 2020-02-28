@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <time.h>
 #include "task3.h"
 
 char* mixLine(char* instr, char* outstr)
