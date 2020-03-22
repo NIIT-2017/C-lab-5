@@ -15,6 +15,7 @@ char* mixLine(char* instr, char* outstr)
 	for (int c = 0; c < strlen(instr); c++)
 	{
 		int letterCounter = 0;
+		
 		for (int i = c; instr[i] != ' ' && instr[i] != '\0'; i++)
 		{
 			if (instr[i] != ' ')
